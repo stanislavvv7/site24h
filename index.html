@@ -344,22 +344,254 @@
     footer a{color:var(--accent);text-decoration:none;}
 
     /* Responsive */
+        /* Планшеты и телефоны */
     @media (max-width:980px){
-      .hero{grid-template-columns:1fr;}
-      .lead{max-width:100%}
-      .grid-3{grid-template-columns:1fr}
-      nav{display:none}
-      header{justify-content:space-between;}
-      .phone{font-size:13px;}
+      header{
+        padding:12px 16px;
+      }
+
+      .wrap{
+        margin:20px auto 32px;
+        padding:0 16px;
+      }
+
+      .hero{
+        grid-template-columns:1fr;
+        gap:18px;
+      }
+
+      .hero-card{
+        padding:22px 18px;
+      }
+
+      .lead{
+        max-width:100%;
+        font-size:14px;
+      }
+
+      .grid-3{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+
+      .chips{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .advantages{
+        flex-direction:column;
+      }
+
+      /* на планшетах/телах показываем бургер, скрываем правую часть шапки */
+      .header-right{
+        display:none;
+      }
+      .menu-toggle{
+        display:flex;
+      }
     }
-    @media (max-width:640px){
-      .hero-card{padding:22px 18px;}
-      .contact-card{margin-top:4px;}
-      .cta{flex-direction:column;align-items:flex-start;}
-      .chips{grid-template-columns:1fr;}
-      .floating-cta{right:16px;bottom:16px;}
-      .fab{width:58px;height:58px;}
+
+    /* Маленькие телефоны */
+    @media (max-width:560px){
+      header{
+        padding:10px 14px;
+      }
+
+      .brand{
+        gap:6px;
+      }
+      .brand-tagline{
+        font-size:12px;
+      }
+
+      .chips{
+        grid-template-columns:1fr;
+      }
+
+      .cta{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .hero-card h1{
+        font-size:24px;
+      }
+
+      .floating-cta{
+        right:12px;
+        bottom:12px;
+      }
+      .fab{
+        width:52px;
+        height:52px;
+        font-size:22px;
+      }
     }
+
+      .brand-tagline{
+      font-size:13px;
+      color:rgba(226,232,240,0.7);
+    }
+
+    .header-right{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+
+    /* Кнопка-бургер по умолчанию скрыта (только для мобилок) */
+    .menu-toggle{
+      display:none;
+      width:40px;
+      height:40px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.6);
+      background:rgba(15,23,42,0.98);
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:6px;
+      padding:0;
+      cursor:pointer;
+      box-shadow:0 8px 24px rgba(15,23,42,0.9);
+    }
+    .menu-toggle span{
+      width:18px;
+      height:2px;
+      background:#e5e7eb;
+      border-radius:999px;
+      transition:transform .18s ease, opacity .18s ease;
+    }
+
+    /* Мобильное меню (выезжающая панель) */
+    .mobile-menu{
+      position:fixed;
+      inset:0;
+      background:rgba(3,7,18,0.92);
+      backdrop-filter:blur(10px);
+      display:flex;
+      justify-content:flex-end;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .2s ease;
+      z-index:998;
+    }
+    .mobile-menu-inner{
+      width:80%;
+      max-width:320px;
+      background:linear-gradient(145deg, rgba(15,23,42,0.98), rgba(15,23,42,0.96));
+      border-left:1px solid rgba(148,163,184,0.4);
+      box-shadow:-16px 0 40px rgba(15,23,42,0.9);
+      padding:18px 18px 20px;
+      transform:translateX(100%);
+      transition:transform .22s ease;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+    .mobile-menu.open{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .mobile-menu.open .mobile-menu-inner{
+      transform:translateX(0);
+    }
+
+    .mobile-menu-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .mobile-logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .mobile-logo .mark{
+      width:32px;
+      height:32px;
+      border-radius:10px;
+      background:conic-gradient(from 200deg,var(--accent),var(--accent-dark),#22c55e,var(--accent));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color:#052126;
+      box-shadow:0 0 16px rgba(34,211,238,0.35);
+    }
+    .mobile-logo .text{
+      font-weight:700;
+      font-size:15px;
+    }
+    .menu-close{
+      width:32px;
+      height:32px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.6);
+      background:rgba(15,23,42,0.98);
+      color:#e5e7eb;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+    }
+
+    .mobile-menu-contact{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      margin-top:4px;
+    }
+    .mobile-phone{
+      color:#e5e7eb;
+      font-weight:700;
+      text-decoration:none;
+      font-size:15px;
+    }
+    .mobile-sub{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .mobile-nav{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      margin-top:8px;
+    }
+    .mobile-nav a{
+      padding:8px 10px;
+      border-radius:10px;
+      text-decoration:none;
+      color:rgba(226,232,240,0.9);
+      font-size:15px;
+      border:1px solid transparent;
+    }
+    .mobile-nav a:hover{
+      background:rgba(15,23,42,0.95);
+      border-color:rgba(148,163,184,0.5);
+    }
+    .mobile-nav a.active{
+      background:linear-gradient(90deg,rgba(45,212,191,0.16),rgba(56,189,248,0.18));
+      border-color:rgba(148,163,184,0.7);
+    }
+
+    .mobile-cta{
+      margin-top:6px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+      color:#052126;
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      box-shadow:0 14px 32px rgba(45,212,191,0.35);
+    }
+
   </style>
 </head>
 <body>
@@ -369,10 +601,11 @@
         <div class="mark">A</div>
         <div class="text">Advokat24H</div>
       </a>
-      <div style="font-size:13px;color:rgba(226,232,240,0.7)">Юридическая помощь и представительство</div>
+      <div class="brand-tagline">Юридическая помощь и представительство</div>
     </div>
 
-    <div style="display:flex;gap:14px;align-items:center">
+    <!-- Правая часть шапки для десктопа -->
+    <div class="header-right">
       <a class="phone" href="tel:+79039617165">+7 (903) 961-71-65</a>
       <nav id="mainNav">
         <a href="index.html" class="active">Главная</a>
@@ -381,7 +614,40 @@
         <a href="contacts.html">Контакты</a>
       </nav>
     </div>
+
+    <!-- Кнопка меню для мобильных -->
+    <button class="menu-toggle" type="button" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <!-- Мобильное меню -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-top">
+        <div class="mobile-logo">
+          <div class="mark">A</div>
+          <div class="text">Advokat24H</div>
+        </div>
+        <button class="menu-close" type="button" aria-label="Закрыть меню">✕</button>
+      </div>
+
+      <div class="mobile-menu-contact">
+        <a class="mobile-phone" href="tel:+79039617165">+7 (903) 961-71-65</a>
+        <div class="mobile-sub">Юридическая помощь и представительство</div>
+      </div>
+
+      <nav class="mobile-nav">
+        <a href="index.html" class="active">Главная</a>
+        <a href="about.html">Обо мне</a>
+        <a href="practice.html">Практика</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+
+      <a class="mobile-cta" href="tel:+79039617165">Позвонить адвокату</a>
+    </div>
+  </div>
 
   <main class="wrap">
     <section class="hero">
@@ -516,7 +782,7 @@
     <a class="fab" href="tel:+79039617165" aria-label="Позвонить адвокату">📞</a>
   </div>
 
-  <script>
+    <script>
     (function ensurePracticeLink(){
       try{
         const nav = document.getElementById('mainNav');
@@ -532,6 +798,40 @@
         }
       }catch(e){console.warn(e)}
     })();
+
+    // Логика мобильного меню
+    (function mobileMenu(){
+      const toggle = document.querySelector('.menu-toggle');
+      const closeBtn = document.querySelector('.menu-close');
+      const menu = document.getElementById('mobileMenu');
+      const links = menu ? menu.querySelectorAll('a') : [];
+
+      if(!toggle || !menu) return;
+
+      function openMenu(){
+        menu.classList.add('open');
+      }
+      function closeMenu(){
+        menu.classList.remove('open');
+      }
+
+      toggle.addEventListener('click', openMenu);
+      if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+      // закрытие по клику вне панели (по фону)
+      menu.addEventListener('click', (e)=>{
+        if(e.target === menu) closeMenu();
+      });
+
+      // закрытие по клику на пункт меню
+      links.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
   </script>
 </body>
 </html>
+
+</body>
+</html>
+
