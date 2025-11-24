@@ -1,0 +1,78 @@
+<!-- practice.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Практика — Владимиров Игорь Семенович</title>
+  <style>
+    body{font-family:Inter,Segoe UI,Arial;background:#f4f6f8;margin:0;color:#0f1724}
+    header{background:#112030;color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+    .container{max-width:1100px;margin:28px auto;padding:0 18px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 24px rgba(20,30,40,0.06)}
+    .list li{margin-bottom:10px}
+    @media (max-width:880px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="font-weight:700">Практика — Владимиров Игорь Семенович</div>
+    <nav>
+      <a href="index.html" style="color:#fff;margin-right:12px">Главная</a>
+      <a href="about.html" style="color:#fff;margin-right:12px">Обо мне</a>
+      <a href="contacts.html" style="color:#fff">Контакты</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h2 style="margin-top:0">Направления практики</h2>
+          <p style="color:#6b7280">Предоставляю правовую помощь по широкому кругу вопросов. Ниже — основные направления.</p>
+          <ul class="list" style="color:#6b7280">
+            <li><strong>Уголовные дела</strong> — защита прав обвиняемых и подсудимых на всех этапах.</li>
+            <li><strong>Гражданские дела</strong> — споры по договорам, взыскание задолженностей, защита прав собственности.</li>
+            <li><strong>Семейные споры</strong> — раздел имущества, споры об алиментах, определение места жительства детей.</li>
+            <li><strong>Наследственные вопросы</strong> — оформление наследства, оспаривание завещаний, раздел наследственной массы.</li>
+            <li><strong>Споры о недвижимости</strong> — сделки, споры о праве собственности, выселение, оформление прав.</li>
+            <li><strong>Арбитражные споры</strong> — представительство организаций в экономических спорах.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin-top:0">Как я работаю</h3>
+          <ol style="color:#6b7280">
+            <li>Первичная консультация и сбор информации.</li>
+            <li>Оценка рисков и формирование линии защиты/действий.</li>
+            <li>Подготовка необходимых документов и доказательств.</li>
+            <li>Представительство в переговорах и в суде.</li>
+          </ol>
+        </div>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <strong>Услуги</strong>
+          <ul style="color:#6b7280;margin-top:8px">
+            <li>Консультации</li>
+            <li>Составление претензий и исков</li>
+            <li>Досудебное урегулирование</li>
+            <li>Представительство в суде</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <strong>Форма сотрудничества</strong>
+          <p style="color:#6b7280;margin-top:8px">Гибкие условия: разовое консультирование или сопровождение дела на договорной основе.</p>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+
+  <footer style="background:#0b1220;color:#cbd5e1;padding:18px;text-align:center;margin-top:28px">© 2025 Владимиров Игорь Семенович</footer>
+</body>
+</html>

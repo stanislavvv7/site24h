@@ -1,0 +1,158 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Владимиров Игорь Семенович — Адвокат</title>
+  <meta name="description" content="Advokat24H — юридическая помощь, представительство в суде, консультации. Практика с 2001 года." />
+  <style>
+    :root{
+      --bg:#f4f6f8; --card:#ffffff; --accent:#1f3b5a; --muted:#6b7280; --glass: rgba(255,255,255,0.6);
+      --radius:12px; --shadow:0 6px 24px rgba(20,30,40,0.08);
+      --container:1100px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Segoe UI, system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#0f1724; -webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    header{position:sticky;top:0;z-index:999;background:linear-gradient(180deg, rgba(31,59,90,0.98), rgba(31,59,90,0.95)); color:#fff;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{font-weight:700;font-size:18px}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin-left:18px;font-weight:600}
+    .phone{background:rgba(255,255,255,0.08);padding:8px 12px;border-radius:10px;font-weight:600}
+
+    .hero{max-width:var(--container);margin:28px auto 0;padding:36px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.5));box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center}
+    .hero-left h1{margin:0;font-size:32px;color:var(--accent)}
+    .hero-left p{color:var(--muted);margin-top:10px;line-height:1.5}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{background:var(--accent);color:white;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn.ghost{background:transparent;color:var(--accent);border:2px solid rgba(31,59,90,0.12)}
+
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
+    .meta{display:flex;gap:18px;align-items:center}
+    .meta .item{display:flex;flex-direction:column}
+    .meta .item strong{font-size:18px;color:var(--accent)}
+    .container{max-width:var(--container);margin:28px auto;padding:0 18px}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .practices-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .practices-list .chip{padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);font-weight:600;box-shadow:0 4px 18px rgba(16,24,40,0.04)}
+
+    .advantages{display:flex;gap:12px}
+    .adv{flex:1;padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:var(--shadow)}
+
+    .cta-inline{display:flex;gap:12px;align-items:center}
+
+    footer{margin-top:48px;padding:28px;background:linear-gradient(180deg,#0f1724,#0b1220);color:#cbd5e1}
+    .footer-inner{max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr;padding:22px}.grid-3{grid-template-columns:1fr}.practices-list{grid-template-columns:1fr}nav a{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">Advokat24H</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.85)">Юридическая помощь и представительство</div>
+    </div>
+    <div style="display:flex;gap:16px;align-items:center">
+      <div class="phone">+7 (903) 961-71-65</div>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">Обо мне</a>
+        <a href="practice.html">Практика</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Владимиров Игорь Семенович — адвокат</h1>
+        <p>Юридическая помощь физическим и юридическим лицам. Представительство в судах, защита прав и законных интересов на всех стадиях дела. Практика с 2001 года, широкий опыт ведения сложных и типовых дел.</p>
+
+        <div class="meta" style="margin-top:18px">
+          <div class="item"><strong>Юридический стаж</strong><span style="color:var(--muted)">С 2001 года</span></div>
+          <div class="item"><strong>Фокус</strong><span style="color:var(--muted)">Представительство в судах и досудебное сопровождение</span></div>
+          <div class="item"><strong>Поддержка</strong><span style="color:var(--muted)">Телефон, Telegram/WhatsApp по номеру</span></div>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="contacts.html#consult">Записаться на консультацию</a>
+          <a class="btn ghost" href="practice.html">Направления практики</a>
+        </div>
+      </div>
+
+      
+    </section>
+
+    <section class="container">
+      <div class="grid-3">
+        <div class="card">
+          <h3 style="margin-top:0">Кратко о подходе</h3>
+          <p style="color:var(--muted)">Индивидуальный подход к каждому клиенту, строгая конфиденциальность и проработка стратегии защиты. Все решения принимаются с учётом правовой позиции клиента и практики суда.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Оказываемые услуги</h3>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>Консультации и подготовка документов</li>
+            <li>Представительство в судах всех инстанций</li>
+            <li>Досудебное урегулирование споров</li>
+            <li>Сопровождение сделок с недвижимостью</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Гарантии</h3>
+          <p style="color:var(--muted)">Честность в оценке рисков, профессиональная этика, соблюдение сроков и полной конфиденциальности.</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top:28px" class="section-title">Основные направления практики</h2>
+      <div class="practices-list">
+        <div class="chip">Уголовные дела</div>
+        <div class="chip">Гражданские дела</div>
+        <div class="chip">Семейные споры</div>
+        <div class="chip">Наследственные вопросы</div>
+        <div class="chip">Споры о недвижимости</div>
+        <div class="chip">Арбитражные споры</div>
+      </div>
+
+      <h2 style="margin-top:28px" class="section-title">Преимущества работы</h2>
+      <div class="advantages">
+        <div class="adv">
+          <strong>Конфиденциальность</strong>
+          <div style="color:var(--muted);margin-top:6px">Полное соблюдение адвокатской тайны при работе с клиентами.</div>
+        </div>
+        <div class="adv">
+          <strong>Практический опыт</strong>
+          <div style="color:var(--muted);margin-top:6px">Многолетняя практика с 2001 года в судах и государственных органах.</div>
+        </div>
+        <div class="adv">
+          <strong>Оперативность</strong>
+          <div style="color:var(--muted);margin-top:6px">Связь по телефону и в мессенджерах, возможна переадресация и срочные консультации.</div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:28px" class="section-title">Отзывы</h2>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="card">«Профессионально и внимательно — помог разобраться в сложной ситуации, рекомендую.» — клиент</div>
+        <div class="card">«Быстро получили чёткий план действий и поддержку в суде.» — клиент</div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 Advokat24H. Все права защищены.</div>
+      <div style="text-align:right">
+        <div>Телефон: <a href="tel:+79039617165" style="color:#cbd5e1">+7 (903) 961-71-65</a></div>
+        <div>Email: <a href="mailto:advokat24h@mail.ru" style="color:#cbd5e1">advokat24h@mail.ru</a></div>
+        <div>Telegram / WhatsApp: по номеру</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
