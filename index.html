@@ -1,158 +1,277 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Владимиров Игорь Семенович — Адвокат</title>
+  <title>Владимиров Игорь — Advokat24H (обновлённый)</title>
   <meta name="description" content="Advokat24H — юридическая помощь, представительство в суде, консультации. Практика с 2001 года." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#f4f6f8; --card:#ffffff; --accent:#1f3b5a; --muted:#6b7280; --glass: rgba(255,255,255,0.6);
-      --radius:12px; --shadow:0 6px 24px rgba(20,30,40,0.08);
-      --container:1100px;
+      --bg:#0f1724; --card:rgba(255,255,255,0.03); --accent:#2dd4bf; --accent-dark:#06b6d4; --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.04); --radius:14px; --container:1200px; --glass-border: rgba(255,255,255,0.06);
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,Segoe UI, system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#0f1724; -webkit-font-smoothing:antialiased}
-    a{color:inherit}
-    header{position:sticky;top:0;z-index:999;background:linear-gradient(180deg, rgba(31,59,90,0.98), rgba(31,59,90,0.95)); color:#fff;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,Segoe UI, system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#071022 0%, #081926 60%); color:#e6eef6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:999;backdrop-filter:blur(6px);background:linear-gradient(180deg, rgba(3,7,12,0.6), rgba(3,7,12,0.35));padding:18px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.03)}
     .brand{display:flex;gap:14px;align-items:center}
-    .logo{font-weight:700;font-size:18px}
-    nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin-left:18px;font-weight:600}
-    .phone{background:rgba(255,255,255,0.08);padding:8px 12px;border-radius:10px;font-weight:600}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .logo .mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;font-weight:800;color:#052126}
+    .logo .text{font-weight:700;font-size:16px}
+    nav{display:flex;align-items:center;gap:18px}
+    nav a{color:rgba(230,238,246,0.9);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600;transition:transform .18s ease, background .18s ease}
+    nav a:hover{transform:translateY(-3px);background:rgba(255,255,255,0.02)}
+    .phone{font-weight:700;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.03)}
 
-    .hero{max-width:var(--container);margin:28px auto 0;padding:36px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.5));box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center}
-    .hero-left h1{margin:0;font-size:32px;color:var(--accent)}
-    .hero-left p{color:var(--muted);margin-top:10px;line-height:1.5}
-    .cta{margin-top:18px;display:flex;gap:12px}
-    .btn{background:var(--accent);color:white;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700}
-    .btn.ghost{background:transparent;color:var(--accent);border:2px solid rgba(31,59,90,0.12)}
+    /* container */
+    .wrap{max-width:var(--container);margin:36px auto;padding:0 20px}
 
-    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
-    .meta{display:flex;gap:18px;align-items:center}
-    .meta .item{display:flex;flex-direction:column}
-    .meta .item strong{font-size:18px;color:var(--accent)}
-    .container{max-width:var(--container);margin:28px auto;padding:0 18px}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border:1px solid var(--glass-border);padding:32px;border-radius:18px;box-shadow:0 8px 40px rgba(2,6,12,0.6);position:relative;overflow:visible}
+    .hero-left h1{margin:0;font-size:34px;line-height:1.05;color:#e6fdfb}
+    .lead{color:var(--muted);margin-top:12px;max-width:70%}
 
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .practices-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .practices-list .chip{padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);font-weight:600;box-shadow:0 4px 18px rgba(16,24,40,0.04)}
+    /* Buttons */
+    .cta{display:flex;gap:12px;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;cursor:pointer;border:none}
+    .btn--primary{background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#052126;box-shadow:0 6px 28px rgba(45,212,191,0.12);transform:translateY(0);transition:transform .16s ease, box-shadow .16s ease}
+    .btn--primary:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(6,182,212,0.18)}
+    .btn--ghost{background:transparent;color:var(--accent);border:1px solid rgba(45,212,191,0.12)}
 
-    .advantages{display:flex;gap:12px}
-    .adv{flex:1;padding:16px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:var(--shadow)}
+    /* Right card */
+    .contact-card{padding:22px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .contact-card h4{margin:0;color:#e6fff8}
+    .contact-card .meta{margin-top:12px;color:var(--muted)}
 
-    .cta-inline{display:flex;gap:12px;align-items:center}
+    /* features */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    .chip{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));font-weight:700}
 
-    footer{margin-top:48px;padding:28px;background:linear-gradient(180deg,#0f1724,#0b1220);color:#cbd5e1}
-    .footer-inner{max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+    /* advantages as fancy cards */
+    .advantages{display:flex;gap:16px;margin-top:18px}
+    .adv{flex:1;padding:18px;border-radius:12px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);transform:translateY(0);transition:transform .18s ease}
+    .adv:hover{transform:translateY(-6px)}
+
+    /* Floating CTA */
+    .floating-cta{position:fixed;right:20px;bottom:22px;z-index:1200}
+    .fab{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:0 12px 36px rgba(2,6,12,0.6);border:none;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#052126}
+    .fab:active{transform:scale(.98)}
+
+    /* Modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,12,0.6);display:none;align-items:center;justify-content:center;z-index:1300}
+    .modal{background:linear-gradient(180deg,#07202a,#04131a);border-radius:12px;padding:20px;max-width:560px;width:92%;border:1px solid rgba(255,255,255,0.04)}
+    .modal h3{margin:0;color:#e6fff8}
+    .field{display:flex;flex-direction:column;margin-top:12px}
+    .field input,.field textarea{padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    .modal .actions{display:flex;gap:10px;justify-content:flex-end;margin-top:14px}
+
+    /* subtle animated accents */
+    .glow{position:absolute;right:-40px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(45,212,191,0.12), transparent 30%);filter:blur(30px);pointer-events:none}
 
     /* Responsive */
-    @media (max-width:980px){.hero{grid-template-columns:1fr;padding:22px}.grid-3{grid-template-columns:1fr}.practices-list{grid-template-columns:1fr}nav a{display:none}}
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .lead{max-width:100%}
+      .grid-3{grid-template-columns:1fr}
+      nav{display:none}
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="brand">
-      <div class="logo">Advokat24H</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.85)">Юридическая помощь и представительство</div>
+      <a class="logo" href="index.html" aria-label="Перейти на главную">
+        <div class="mark">A</div>
+        <div class="text">Advokat24H</div>
+      </a>
+      <div style="font-size:13px;color:rgba(230,238,246,0.7)">Юридическая помощь и представительство</div>
     </div>
-    <div style="display:flex;gap:16px;align-items:center">
+
+    <div style="display:flex;gap:14px;align-items:center">
       <div class="phone">+7 (903) 961-71-65</div>
-      <nav>
+      <nav id="mainNav">
         <a href="index.html">Главная</a>
         <a href="about.html">Обо мне</a>
-        <a href="practice.html">Практика</a>
+        <!-- Практика будет добавлена скриптом, если отсутствует на страницах -->
         <a href="contacts.html">Контакты</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main class="wrap">
     <section class="hero">
-      <div class="hero-left">
-        <h1>Владимиров Игорь Семенович — адвокат</h1>
-        <p>Юридическая помощь физическим и юридическим лицам. Представительство в судах, защита прав и законных интересов на всех стадиях дела. Практика с 2001 года, широкий опыт ведения сложных и типовых дел.</p>
+      <div class="hero-card">
+        <div class="glow" aria-hidden></div>
+        <div class="hero-left">
+          <h1>Адвокат Владимиров Игорь — защита и представительство в суде</h1>
+          <p class="lead">Комплексная юридическая помощь для физических и юридических лиц: консультации, подготовка документов, представительство в судах и арбитражах. Практика с 2001 года — персональная стратегия для каждого дела.</p>
 
-        <div class="meta" style="margin-top:18px">
-          <div class="item"><strong>Юридический стаж</strong><span style="color:var(--muted)">С 2001 года</span></div>
-          <div class="item"><strong>Фокус</strong><span style="color:var(--muted)">Представительство в судах и досудебное сопровождение</span></div>
-          <div class="item"><strong>Поддержка</strong><span style="color:var(--muted)">Телефон, Telegram/WhatsApp по номеру</span></div>
-        </div>
+          <div class="cta">
+            <button class="btn btn--primary" id="openConsult">Записаться на консультацию</button>
+            <a class="btn btn--ghost" href="practice.html">Направления практики</a>
+          </div>
 
-        <div class="cta">
-          <a class="btn" href="contacts.html#consult">Записаться на консультацию</a>
-          <a class="btn ghost" href="practice.html">Направления практики</a>
+          <div style="margin-top:20px;display:flex;gap:18px;align-items:center">
+            <div style="background:rgba(255,255,255,0.02);padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+              <strong style="display:block;color:#e6fff8">Юридический стаж</strong>
+              <span style="color:var(--muted)">с 2001 года</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.02);padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+              <strong style="display:block;color:#e6fff8">Фокус</strong>
+              <span style="color:var(--muted)">Представительство и досудебное сопровождение</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      
+      <aside class="contact-card" aria-labelledby="contactTitle">
+        <h4 id="contactTitle">Связаться</h4>
+        <div class="meta">Телефон: <a href="tel:+79039617165" style="color:var(--accent);text-decoration:none;margin-left:6px">+7 (903) 961-71-65</a></div>
+        <div class="meta" style="margin-top:8px">Email: <a href="mailto:advokat24h@mail.ru" style="color:var(--accent);text-decoration:none;margin-left:6px">advokat24h@mail.ru</a></div>
+        <div style="margin-top:12px;font-size:14px;color:var(--muted)">Онлайн-консультация по телефону или в мессенджерах. Быстрая первичная оценка дела.</div>
+
+        <div style="margin-top:14px;display:flex;gap:8px">
+          <a class="btn btn--ghost" href="contacts.html#consult">Заявка на консультацию</a>
+          <a class="btn" href="practice.html" style="background:transparent;border:1px solid rgba(255,255,255,0.03);color:inherit">О направлениях</a>
+        </div>
+      </aside>
     </section>
 
-    <section class="container">
+    <section>
       <div class="grid-3">
         <div class="card">
-          <h3 style="margin-top:0">Кратко о подходе</h3>
-          <p style="color:var(--muted)">Индивидуальный подход к каждому клиенту, строгая конфиденциальность и проработка стратегии защиты. Все решения принимаются с учётом правовой позиции клиента и практики суда.</p>
+          <h3 style="margin-top:0">Подход</h3>
+          <p style="color:var(--muted)">Индивидуальная стратегия, тщательная подготовка и соблюдение адвокатской тайны. Работаем на результат, а не на красивые обещания.</p>
         </div>
         <div class="card">
-          <h3 style="margin-top:0">Оказываемые услуги</h3>
+          <h3 style="margin-top:0">Услуги</h3>
           <ul style="margin:0;padding-left:18px;color:var(--muted)">
-            <li>Консультации и подготовка документов</li>
-            <li>Представительство в судах всех инстанций</li>
+            <li>Консультации и правовая экспертиза</li>
+            <li>Представительство в судах и арбитражах</li>
             <li>Досудебное урегулирование споров</li>
-            <li>Сопровождение сделок с недвижимостью</li>
           </ul>
         </div>
         <div class="card">
           <h3 style="margin-top:0">Гарантии</h3>
-          <p style="color:var(--muted)">Честность в оценке рисков, профессиональная этика, соблюдение сроков и полной конфиденциальности.</p>
+          <p style="color:var(--muted)">Профессиональная этика, прозрачные условия и реалистичная оценка шансов.</p>
         </div>
       </div>
 
-      <h2 style="margin-top:28px" class="section-title">Основные направления практики</h2>
-      <div class="practices-list">
+      <h2 style="margin-top:28px">Основные направления практики</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px">
         <div class="chip">Уголовные дела</div>
         <div class="chip">Гражданские дела</div>
         <div class="chip">Семейные споры</div>
         <div class="chip">Наследственные вопросы</div>
         <div class="chip">Споры о недвижимости</div>
-        <div class="chip">Арбитражные споры</div>
+        <div class="chip">Арбитраж</div>
       </div>
 
-      <h2 style="margin-top:28px" class="section-title">Преимущества работы</h2>
+      <h2 style="margin-top:28px">Преимущества работы</h2>
       <div class="advantages">
-        <div class="adv">
-          <strong>Конфиденциальность</strong>
-          <div style="color:var(--muted);margin-top:6px">Полное соблюдение адвокатской тайны при работе с клиентами.</div>
-        </div>
-        <div class="adv">
-          <strong>Практический опыт</strong>
-          <div style="color:var(--muted);margin-top:6px">Многолетняя практика с 2001 года в судах и государственных органах.</div>
-        </div>
-        <div class="adv">
-          <strong>Оперативность</strong>
-          <div style="color:var(--muted);margin-top:6px">Связь по телефону и в мессенджерах, возможна переадресация и срочные консультации.</div>
-        </div>
+        <div class="adv"><strong>Конфиденциальность</strong><div style="color:var(--muted);margin-top:6px">Соблюдение адвокатской тайны и деловой этики.</div></div>
+        <div class="adv"><strong>Опыт</strong><div style="color:var(--muted);margin-top:6px">Практика с 2001 года в судах и государственных органах.</div></div>
+        <div class="adv"><strong>Оперативность</strong><div style="color:var(--muted);margin-top:6px">Связь по телефону и мессенджерам, срочные консультации.</div></div>
       </div>
 
-      <h2 style="margin-top:28px" class="section-title">Отзывы</h2>
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div class="card">«Профессионально и внимательно — помог разобраться в сложной ситуации, рекомендую.» — клиент</div>
-        <div class="card">«Быстро получили чёткий план действий и поддержку в суде.» — клиент</div>
-      </div>
+      <!-- Отзывы убраны по запросу, место можно использовать под кейсы/блок преимуществ -->
 
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
+  <footer style="margin-top:48px;padding:28px;background:linear-gradient(180deg,#021016,#03121a);color:rgba(230,238,246,0.8)">
+    <div style="max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:center">
       <div>© 2025 Advokat24H. Все права защищены.</div>
-      <div style="text-align:right">
-        <div>Телефон: <a href="tel:+79039617165" style="color:#cbd5e1">+7 (903) 961-71-65</a></div>
-        <div>Email: <a href="mailto:advokat24h@mail.ru" style="color:#cbd5e1">advokat24h@mail.ru</a></div>
-        <div>Telegram / WhatsApp: по номеру</div>
+      <div style="text-align:right;font-size:14px;color:var(--muted)">
+        <div>Телефон: <a href="tel:+79039617165" style="color:var(--accent);text-decoration:none">+7 (903) 961-71-65</a></div>
+        <div>Email: <a href="mailto:advokat24h@mail.ru" style="color:var(--accent);text-decoration:none">advokat24h@mail.ru</a></div>
       </div>
     </div>
   </footer>
+
+  <!-- Floating CTA -->
+  <div class="floating-cta">
+    <button class="fab" id="fabConsult" aria-label="Записаться на консультацию">✉</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true">
+    <div class="modal" role="document">
+      <h3>Записаться на консультацию</h3>
+      <p style="color:var(--muted);margin-top:8px">Оставьте контактные данные — мы свяжемся в ближайшее время.</p>
+      <div class="field"><label class="sr-only">Имя</label><input id="name" placeholder="Ваше имя" /></div>
+      <div class="field"><label class="sr-only">Телефон</label><input id="phone" placeholder="Телефон или мессенджер" /></div>
+      <div class="field"><label class="sr-only">Комментарий</label><textarea id="note" rows="3" placeholder="Кратко о вашей ситуации"></textarea></div>
+      <div class="actions">
+        <button class="btn btn--ghost" id="closeModal">Отмена</button>
+        <button class="btn btn--primary" id="sendConsult">Отправить заявку</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Сделать логотип кликабельным на все страницы - уже реализовано как ссылка на index.html
+
+    // Удобная логика: если в навигации нет Practice, добавить ее (для других страниц)
+    (function ensurePracticeLink(){
+      try{
+        const nav = document.getElementById('mainNav');
+        if(!nav) return;
+        const exists = Array.from(nav.querySelectorAll('a')).some(a => /practice/i.test(a.getAttribute('href') || ''));
+        if(!exists){
+          const a = document.createElement('a');
+          a.href = 'practice.html';
+          a.textContent = 'Практика';
+          a.style.fontWeight = '600';
+          nav.insertBefore(a, nav.querySelector('a:last-child'));
+        }
+      }catch(e){console.warn(e)}
+    })();
+
+    // Modal behaviour
+    const backdrop = document.getElementById('modalBackdrop');
+    const openBtn = document.getElementById('openConsult');
+    const fab = document.getElementById('fabConsult');
+    const closeBtn = document.getElementById('closeModal');
+    const sendBtn = document.getElementById('sendConsult');
+
+    function openModal(){ backdrop.style.display = 'flex'; document.getElementById('name').focus(); }
+    function closeModal(){ backdrop.style.display = 'none'; }
+
+    if(openBtn) openBtn.addEventListener('click', openModal);
+    if(fab) fab.addEventListener('click', openModal);
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', (e)=>{ if(e.target===backdrop) closeModal(); });
+
+    // Формирование mailto (fallback) — т.к. серверной части нет
+    sendBtn.addEventListener('click', ()=>{
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const note = document.getElementById('note').value.trim();
+      const body = encodeURIComponent(`Имя: ${name}%0AТелефон: ${phone}%0AКомментарий: ${note}`);
+      // Попытка открыть почтовый клиент
+      location.href = `mailto:advokat24h@mail.ru?subject=${encodeURIComponent('Заявка на консультацию')}&body=${body}`;
+      // Закрыть модал
+      closeModal();
+    });
+
+    // Accessibility: esc to close
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
+
+    // небольшой интерактив: задвижение по прокрутке (subtle)
+    let lastScroll=window.scrollY;
+    window.addEventListener('scroll', ()=>{
+      const header = document.querySelector('header');
+      if(window.scrollY>lastScroll){ header.style.transform='translateY(-6px)'; header.style.opacity='0.98';}
+      else{ header.style.transform='translateY(0)'; header.style.opacity='1'; }
+      lastScroll=window.scrollY;
+    });
+  </script>
 </body>
 </html>
