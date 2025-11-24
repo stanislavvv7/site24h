@@ -1,0 +1,70 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Обо мне — Владимиров Игорь Семенович</title>
+  <style>
+    body{font-family:Inter,Segoe UI,Arial;background:var(--bg, #f4f6f8);margin:0;color:#0f1724}
+    header{background:#112030;color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+    .container{max-width:1100px;margin:28px auto;padding:0 18px}
+    .hero{background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 24px rgba(20,30,40,0.06)}
+    .two{display:grid;grid-template-columns:280px 1fr;gap:18px;margin-top:18px}
+    .photo{height:260px;background:linear-gradient(180deg,#e9eef6,#f8fbff);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#6b7280}
+    .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 24px rgba(20,30,40,0.06)}
+    a{color:#1f3b5a}
+    @media (max-width:880px){.two{grid-template-columns:1fr}header nav{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="font-weight:700">Advokat24H</div>
+    <nav>
+      <a href="index.html" style="color:#fff;margin-right:12px">Главная</a>
+      <a href="practice.html" style="color:#fff;margin-right:12px">Практика</a>
+      <a href="contacts.html" style="color:#fff">Контакты</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="hero card">
+      <h2 style="margin-top:0">Обо мне</h2>
+      <p style="color:#6b7280">Я оказываю комплексную юридическую помощь физическим и юридическим лицам: консультации, подготовка документов, досудебное урегулирование и представительство в судах. Работаю аккуратно, дисциплинированно и конфиденциально.</p>
+    </div>
+
+    <div class="two">
+      <div>
+        <div class="photo" style="display:none"></div>
+        <div style="height:18px"></div>
+        <div class="card">
+          <strong>Контакты</strong>
+          <div style="color:#6b7280;margin-top:8px">Телефон: <a href="tel:+79039617165">+7 (903) 961-71-65</a><br>Email: <a href="mailto:advokat24h@mail.ru">advokat24h@mail.ru</a><br>Telegram / WhatsApp: по номеру</div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <h3 style="margin-top:0">Образование и квалификации</h3>
+          <ul style="color:#6b7280">
+            <li>Высшее юридическое образование</li>
+            <li>Повышение квалификации и семинары по судебной практике</li>
+            <li>Член коллегии адвокатов (при наличии, заполните при необходимости)</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin-top:0">Подход к работе</h3>
+          <p style="color:#6b7280">При работе ставлю в приоритет интересы клиента: тщательная подготовка материалов, проработка линии защиты и прозрачная коммуникация. Конфиденциальность гарантирована.</p>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3 style="margin-top:0">Опыт</h3>
+          <p style="color:#6b7280">Практика с 2001 года — многолетний опыт ведения дел различной сложности и множества успешных кейсов в судах и при взаимодействии с государственными органами.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer style="background:#0b1220;color:#cbd5e1;padding:18px;text-align:center;margin-top:28px">© 2025 Владимиров Игорь Семенович</footer>
+</body>
+</html>
